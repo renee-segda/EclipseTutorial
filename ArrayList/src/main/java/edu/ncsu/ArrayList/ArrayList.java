@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author Kai Presler-Marshall
  *
  * @param <E>
- *            Generic type thta gets stored in this List
+ *            Generic type that gets stored in this List
  */
 @SuppressWarnings ( "unchecked" )
 public class ArrayList <E> extends AbstractList<E> {
@@ -94,8 +94,8 @@ public class ArrayList <E> extends AbstractList<E> {
 
         final int numMoved = size - index - 1;
         if ( numMoved > 0 ) {
-            System.arraycopy( objects, index + 1, objects, index,
-                    numMoved ); /* Change index + 1 to index */
+            System.arraycopy( objects, index, objects, index,
+                    numMoved );
         }
         objects[--size] = null;
 
