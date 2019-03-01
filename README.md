@@ -1,6 +1,35 @@
-# Eclipse Tutorial
+# Eclipse Tutorial & Intro to Version Control
 
-Eclipse, like any modern IDE, contains a number of really cool features that, if used properly, make our lives as developers much more productive.  The aim of this workshop is to introduce you to a few of them, so that you have a more productive experience in CSC326 and beyond.
+## Version Control Intro
+Version control software is a type of software that lets us manage the evolution of files (for developers, this most often means source code) over time.  It lets us track the state of a software project, see what files have been changed, by who, when, and lets us view past versions should we so desire.  Git is the most commonly-used version contorl system because of its ease of use and powerful features.
+
+Github, a web-based hosting service for Git repositories, is used to provide a public hosting for git repositories so that developers can share their source code and collaborate efficiently.  This workshop that you are reading right now is hosted on Github!
+
+If you haven't already done so, sign up for a [Github account](www.github.com).  This will be useful all weekend as you work on your projects, and allow you to share your source code with your teammates.  Then, fork a copy of this repository to your own Github account by clicking the "fork" account in the top-right of this page.  What does this do?  It'll create a separate copy of the project that you are able to modify, so that you can then make changes when you fix a bug later on.
+
+![fork](https://user-images.githubusercontent.com/12502294/53657415-19bfcc00-3c24-11e9-9b58-11f059fb0950.png)
+This will give you your own copy of this workshop, which you can make your own changes to.  
+
+Next, if you don't already have a Git client installed on your computer, [download and install one](https://git-scm.com/download/).  You'll want one for cloning the project (downloading a copy of it locally) and for _pushing_ your changes (uploading your changes back to your repository) once you're done.  If you know what you're doing, you can change the installation settings, but the default ones are fine as well.
+
+If you haven't used Git before, we suggest you use the Git Gui client, as it's the easiest to get started with.  When it launches, enter in the URL of your forked repository (which should be `https://github.com/<your username>/EclipseTutorial`) and the folder on your computer you want to save it to.
+
+![git_clone](https://user-images.githubusercontent.com/12502294/53658245-3c52e480-3c26-11e9-92c6-d626abfae450.png)
+
+Then, click the "Clone" button, and Git will clone a copy of your repository onto your local computer.
+
+You should then see something like the following:
+![git_cloned](https://user-images.githubusercontent.com/12502294/53658378-9784d700-3c26-11e9-8cfb-aad4bcc384f0.png)
+
+At this point, you have a copy of the project on your computer ready to go.  You can now import it into Eclipse, and begin with the next section of this workshop!
+
+## Eclipse Intro
+
+Eclipse, like any modern IDE, contains a number of really cool features that, if used properly, make our lives as developers much more productive.  The aim of this workshop is to introduce you to a few of them, so that you have a more productive experience in CSC326 and beyond.  If you don't have Eclipse installed already, you'll want to [download](https://www.eclipse.org/downloads/) it and install it now.  Launch the installer, and you should be greeted with a window like the following:
+
+![eclipse_installer](https://user-images.githubusercontent.com/12502294/53658623-475a4480-3c27-11e9-8bdf-a5efaaebbe03.png)
+
+Select the "Eclipse IDE for Java Developers" option, and install Eclipse.  You can safely choose all of the default options, and then launch it once it's done installing.  You can safely close the Intro screen.  Then, right-click in the Package Explorer on the left side, and select Import -> Maven -> Existing Maven Projects, and browse to where you cloned this workshop.  Yo ucan use the Java files included here to follow along with the rest of this workshop.
 
 ## General/High-Level Features
 
@@ -98,24 +127,24 @@ Hitting "Ctrl + Shift + I" again will, as indicated, move this to an "Expression
 Note that you don't even have to put semicolons at the end, because you're just inspecting a fragment rather than running an entire program.  Probably a good idea to Ctrl+Z to remove any invalid code when you're done though.
 
 
-
 ### Miscellaneous things
 * Pause on Exception:  Think you're hitting an exception somewhere, and it's causing the issue you're seeing even though it's caught somewhere else?  Click on the "Breakpoints" window, then the icon that looks like "J!", and then type in part of the name you're looking for (wildcards are allowed):
 ![catch_exception](https://media.github.ncsu.edu/user/2943/files/4d93b7c4-7f0c-11e8-8075-9a58488d22b0)
 You can configure it to pause on either caught or uncaught exceptions, or both.  If you think the problem is from a caught exception, it can be useful to check that box.  Click OK and this will give you a breakpoint that functions like any other.
 * Clicking on a line in the current method and then hit "Ctrl + R" will run to that line.  Easy to jump over large blocks of code at once.
 
-## Assignment
+## Activity
 
-Now that you've been introduced to some of the functionality that Eclipse offers, we have an exercise for you to practice some of what you've seen.  Fork this repo (button in the top right) and then clone your forked copy.  Then import the attached project into Eclipse (right-click in the Project Explorer, then click Import -> Maven -> Existing Maven Projects and browse to where you cloned the repo).  The bundled project requires you to have a MySQL or MariaDB database (like CoffeeMaker and iTrust2).  You can set the credentials for it in the `db.properties` file in the project.
+Once you have everything imported, you'll see there are two files: `ArrayList.java`, an implementation of a simple array-based List, and `ArrayListTest.java`, a set of unit tests for the functionality to ensure that it works.  
 
-Once you have everything imported, run the `DBBuilder.java` class to build the database and populate it with some data.
+Unfortunately, there's a bug in the ArrayList implementation.  Run the tests, and you'll see that one of them is failing.  Once you've found the failing test, go back to your Git repository (that you created above).  Click on the "Issues" tab, then "New Issue", and create an Issue that represents the bug that you found in the sytem.  Describe the bug as best as you can, including what you think might be causing it.
 
-You'll see that there's also a Java class, `UniversalDAOTest.java`, that contains a number of JUnit tests.  Unfortunately, if you run it, you'll find that all of them are failing.  Your job is to find and fix the bugs that are causing this to happen.  We encourage a three step process:
-* Observe the bug, as demonstrated by a failing testcase.
-* Figure out what's causing the bug by setting breakpoints and using the debugger's tools.
-* Fix the bug
+The activity today is to figure out what's causing this bug.  We encourage you to use the Eclipse debugger to uncover the source of this bug.  To do so, instead of clicking Run As -> JUnit Test, click Debug As -> JUnit Test.  Go back to Eclipse, and work on fixing the bug in the system.  When you have it fixed, and the tests are all passing, go back to the Git client.  Hit the F5 key, or Commit->Rescan from the menu.  The Git client will show you a preview of what files you've changed:
 
-You'll probably want to use the Eclipse debugger.  To do so, instead of clicking Run As -> JUnit Test, click Debug As -> JUnit Test.
+![git_client](https://user-images.githubusercontent.com/12502294/53659258-17ac3c00-3c29-11e9-8986-18c12a73fa5a.png)
 
-**Submission:** Finally, when you're done (the bugs are fixed, and the JUnit tests pass), push what you have to your forked repo. 
+Right-click on the file, and select "Stage Hunk For Commit", which adds it to the list of files that will get included with the next commit.  Then, in your commit message, enter "Fixes #1" to indicate that this fixes the Issue that you created earlier.  Finally, click the "Push" button.  If you get a popup button, click "Push" in it too.  You should see a confirmation message that everything was pushed successfully!
+
+Now, check your forked Git repository that you created at the beginning of this workshop.  You should see that there's a new commit, and that the Issue you created has been closed.  How did that happen?  Git saw the "Fixes #1" message that you added to your commit, and realised this must be a fix for the Issue that was opened.
+
+Congratulations, you've now created your own Git repository, documented a bug, and then fixed it!
