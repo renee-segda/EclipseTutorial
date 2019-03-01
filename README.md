@@ -1,14 +1,13 @@
 # Eclipse Tutorial & Intro to Version Control
 
 ## Version Control Intro
-Version control software is a type of software that lets us manage the evolution of files (for developers, this most often means source code) over time.  It lets us track the state of a software project, see what files have been changed, by who, when, and lets us view past versions should we so desire.  Git is the most commonly-used version contorl system because of its ease of use and powerful features.
+Version control software is a type of software that lets us manage the evolution of files (for developers, this most often means source code) over time.  It lets us track the state of a software project, see what files have been changed, by who, when, and lets us revert to past versions should we so desire.  Git is the most commonly-used version control system because of its ease of use and powerful features.
 
-Github, a web-based hosting service for Git repositories, is used to provide a public hosting for git repositories so that developers can share their source code and collaborate efficiently.  This workshop that you are reading right now is hosted on Github!
+Github, a web-based hosting service for Git repositories, is used to provide a public hosting for git repositories so that developers can share their source code and collaborate efficiently.  In addition to just hosting code, Github offers powerful collaboration features, including the ability to create _Issues_ to document bugs or requested enhancements, _Wikis_ to contain more information about how to use a project, and _Projects_ to track outstanding tasks.  Today, we'll just be looking at some of that.
 
 If you haven't already done so, sign up for a [Github account](www.github.com).  This will be useful all weekend as you work on your projects, and allow you to share your source code with your teammates.  Then, fork a copy of this repository to your own Github account by clicking the "fork" account in the top-right of this page.  What does this do?  It'll create a separate copy of the project that you are able to modify, so that you can then make changes when you fix a bug later on.
 
 ![fork](https://user-images.githubusercontent.com/12502294/53657415-19bfcc00-3c24-11e9-9b58-11f059fb0950.png)
-This will give you your own copy of this workshop, which you can make your own changes to.  
 
 Next, if you don't already have a Git client installed on your computer, [download and install one](https://git-scm.com/download/).  You'll want one for cloning the project (downloading a copy of it locally) and for _pushing_ your changes (uploading your changes back to your repository) once you're done.  If you know what you're doing, you can change the installation settings, but the default ones are fine as well.
 
