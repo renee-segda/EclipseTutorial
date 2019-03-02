@@ -94,7 +94,7 @@ public class ArrayList <E> extends AbstractList<E> {
 
         final int numMoved = size - index - 1;
         if ( numMoved > 0 ) {
-            System.arraycopy( objects, index, objects, index,
+            System.arraycopy( objects, index + 1, objects, index,
                     numMoved );
         }
         objects[--size] = null;
